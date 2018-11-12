@@ -5,13 +5,15 @@ export class Example extends React.Component {
 	render() {
 		const { data } = this.props;
 		return (
-			<div>
-				<p>Привет, {`${data}`}!</p>
-			</div>
+			<ul>
+				{data.map(item => {
+					return <li key={item.rank}>{item.name}</li>
+				})}
+			</ul>
 		)
 	}
 }
 
-Example.propTypes = {
-	name: PropTypes.string.isRequired,
-}
+// Example.propTypes = {
+// 	name: PropTypes.string.isRequired,
+// }

@@ -1,31 +1,38 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import { Table } from "../components/Table";
-import { Example } from "../components/Example";
+import MyTable from "../components/MyTable";
+
 
 import { getData } from '../actions/PageActions';
 
 import './App.css';
 
 class App extends Component {
+
+
+	componentDidMount() {
+		this.props.onGetData()
+	}
+
 	render() {
-		const { dataX, onGetData } = this.props;
-		onGetData();
-		console.log("Данные", `${dataX}`);
+		console.log(this.props.isFetching);
 		return (
-			<div className="App">
-				{/* <Table data={data}/> */}
-				<Example data={dataX}/>
-			</div>
+			this.props.isFetching
+			?
+				<div>{this.props.dataX}</div>
+			:
+				<div className="App">
+					<MyTable data={this.props.dataX} />
+				</div>
 		)
 	}
 }
 
 /* Приклеиваем данные из store */
 const mapStateToProps = store => {
-	console.log(store);
 	return {
-		dataX: store.data
+		dataX: store.page.data,
+		isFetching: store.page.isFetching
 	}
 }
 
