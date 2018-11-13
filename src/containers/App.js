@@ -21,7 +21,7 @@ class App extends Component {
 		return (
 			this.props.isFetching
 			?
-				<div>{this.props.dataX}</div>
+				<div className='loadTxt'>{this.props.dataX}</div>
 			:
 				<div className="App">
 					<MyTable data={this.props.dataX} />

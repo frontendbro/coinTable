@@ -9,7 +9,6 @@ export default class MyTable extends Component {
   componentDidMount() {
     const scrollWidth = this.table.current.offsetWidth - this.table.current.clientWidth;
     const withScroll = this.table.current.clientWidth + scrollWidth;
-    console.log(withScroll);
 
     this.table.current.style.overflow = "hidden";
     this.table.current.style.width = `${withScroll}px`;

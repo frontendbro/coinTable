@@ -21,7 +21,7 @@
 .myTable-body {
   display: inline-block;
   height: 200px;
-  overflow: auto;
+  overflow: scroll;
   margin-top: 38px;
 }
 .myTable-head__th {
