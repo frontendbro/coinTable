@@ -1,3 +1,37 @@
+
 .myTable {
-  color: green;
+  position: relative;
+  border-radius: 3px;
+  box-shadow: 0 8px 17px 2px rgba(0, 0, 0, 0.14),
+  0 3px 14px 2px rgba(0, 0, 0, 0.12),
+  0 5px 5px -3px rgba(0, 0, 0, 0.2);
+  background-color: #34495E;
+}
+
+.myTable-head {
+  display: table;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  box-shadow: 0 8px 17px 2px rgba(0, 0, 0, 0.14),
+  0 3px 14px 2px rgba(0, 0, 0, 0.12),
+  0 5px 5px -3px rgba(0, 0, 0, 0.2);
+}
+.myTable-body {
+  display: inline-block;
+  height: 200px;
+  overflow: auto;
+  margin-top: 38px;
+}
+.myTable-head__th {
+  color: #dd5;
+}
+.myTable-head__td {
+  color: #fff;
+  border-bottom: 1px solid #1F2739;
+}
+
+.myTable:hover .myTable-body {
+  overflow-y: scroll;
 }

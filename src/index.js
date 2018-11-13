@@ -4,7 +4,6 @@ import {Provider} from 'react-redux';
 import {store} from './store';
 import App from './containers/App';
 
-//import serviceWorker from "./serviceWorker";
 
 import "./index.css";
 
@@ -14,5 +13,3 @@ ReactDOM.render(
   </Provider>,
   document.getElementById("root")
 );
-
-//serviceWorker();

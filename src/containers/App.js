@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import MyTable from "../components/MyTable";
+import {sortBy} from 'lodash';
+
 
 
 import { getData } from '../actions/PageActions';
@@ -15,7 +17,7 @@ class App extends Component {
 	}
 
 	render() {
-		console.log(this.props.isFetching);
+
 		return (
 			this.props.isFetching
 			?
@@ -30,8 +32,9 @@ class App extends Component {
 
 /* Приклеиваем данные из store */
 const mapStateToProps = store => {
+	const sortData = sortBy(store.page.data, ["marketCapUsd"]).reverse().slice(0,15);
 	return {
-		dataX: store.page.data,
+		dataX: sortData,
 		isFetching: store.page.isFetching
 	}
 }
